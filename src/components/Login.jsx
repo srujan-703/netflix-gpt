@@ -5,6 +5,7 @@ import checkValidData from "../utils/validate";
 import { createUserWithEmailAndPassword ,signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../utils/firebase";
 import { useNavigate } from "react-router-dom";
+import { BG } from "../utils/constants";
 const Login = () => {
   const navigate = useNavigate()
   const [errorMessage ,setErrorMessage] = useState(null)
@@ -52,7 +53,7 @@ const Login = () => {
       <Header />
       <div className="absolute">
         <img
-          src="https://assets.nflxext.com/ffe/siteui/vlv3/024bfb98-9e9d-441d-9c5f-d2c798d8e42f/web/IN-en-20251013-TRIFECTA-perspective_b6324826-0535-47c5-be5f-4f50e9663eaf_medium.jpg"
+          src={BG}
           alt="Bakcground Image"
         />
       </div>
