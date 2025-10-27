@@ -10,3 +10,5 @@ export const OPTIONS = {
     accept: "application/json",
   },
 };
+
+export const IMG_CDn = "https://image.tmdb.org/t/p/w500";
