@@ -8,6 +8,7 @@ import { onAuthStateChanged } from 'firebase/auth';
 import { addUser,removeUser } from '../utils/userSlice';
 import { useDispatch } from 'react-redux';
 import { LOGO } from '../utils/constants';
+import { gptButtonToggle } from '../utils/gptSlice';
 const Header = () => {
   const dispatch = useDispatch()
   const  user = useSelector((store) => store.user)
@@ -33,6 +34,9 @@ const Header = () => {
           navigate("/error")
     });
   }
+  const handleGptButton = () => {
+    dispatch(gptButtonToggle())
+  }
   return (
     <div className='absolute w-full px-8 py-2 bg-gradient-to-r  z-10 flex justify-between items-center'>
       <img
@@ -41,6 +45,7 @@ const Header = () => {
       />
       {user && (
       <div className='flex items-center'>
+        <button className='text-white m-[6px] p-[6px] bg-purple-500 rounded-lg' onClick={handleGptButton}>Search GPT</button>
         <button className='text-white font-bold bg-red-500 px-4 py-2 rounded-xl' onClick={handleSignOut}>
           Sign out
         </button>
